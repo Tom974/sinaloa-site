@@ -59,7 +59,6 @@ $sinaloa->includeHead();
                                         foreach($grafiek as $grafie) {
                                             $arr .= $grafie['aantal_planten'].",";
                                         }
-
                                         $arr = substr($arr, 0, -1);
                                         $arr .= ']';
                                     ?>
