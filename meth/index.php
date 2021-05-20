@@ -100,7 +100,7 @@ $sinaloa->includeHead();
                                             <?= ($totaal == "") ? "0" : $totaal ?>
                                         </p>
                                         <a class="link-fx font-size-sm font-w600 text-muted text-uppercase mb-0" href="javascript:void(0)">
-                                            Ingredienten in de loods
+                                            Ingredienten in de Loods
                                         </a>
                                     </div>
                                     <div>
