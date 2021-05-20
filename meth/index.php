@@ -385,6 +385,15 @@ $sinaloa->includeHead();
         <script src="<?= str_replace("/home/tom/domains/tom974.dev/public_html", "", $_SERVER['DOCUMENT_ROOT']) ?>/sinaloa/assets/js/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
 
         <script>
+            setInterval(function(){
+                jQuery(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/../assets/scripts/refreshsession.php"
+                    });
+                });
+            }, 600000); 
+
             if ( window.history.replaceState ) {
                 window.history.replaceState( null, null, window.location.href );
             }
