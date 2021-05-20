@@ -55,7 +55,7 @@ $sinaloa->includeHead();
                                     <?php
                                         # php code om de laatste wijzigingen in de loods op te halen
                                         $grafiek = $sinaloa->execute("SELECT aantal_planten FROM `meth_aantallen` ORDER BY `id` ASC LIMIT 8;", '', "fetchAll");
-                                        $arr = '['; 
+                                        $arr = '[';
                                         foreach($grafiek as $grafie) {
                                             $arr .= $grafie['aantal_planten'].",";
                                         }
