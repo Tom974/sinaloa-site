@@ -59,8 +59,6 @@ $sinaloa->includeHead();
                                         foreach($grafiek as $grafie) {
                                             $arr .= $grafie['aantal_planten'].",";
                                         }
-
-
                                         $arr = substr($arr, 0, -1);
                                         $arr .= ']';
                                     ?>
@@ -90,7 +88,15 @@ $sinaloa->includeHead();
                                 <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                                     <div class="ml-3">
                                         <p class="font-size-h2 font-w300 text-black mb-0">
-                                            <?= ($aantal_in_loods[0] == "") ? "0" : $aantal_in_loods[0] ?>
+                                            <?php
+                                                $aantal = $sinaloa->execute("SELECT * FROM `meth_personen` ORDER BY id DESC;", [], 'fetchAll');
+                                                $totaal = 0;
+                                                foreach($aantal as $persoon) {
+                                                    $totaal = floatval($totaal + $persoon['aantal_planten']);
+                                                }
+
+                                            ?>
+                                            <?= ($totaal == "") ? "0" : $totaal ?>
                                         </p>
                                         <a class="link-fx font-size-sm font-w600 text-muted text-uppercase mb-0" href="javascript:void(0)">
                                             Ingredienten in de loods
@@ -181,9 +187,7 @@ $sinaloa->includeHead();
                                         <p class="font-size-h2 font-w300 text-black mb-0">
                                             <?php
                                             $lastremoved = $sinaloa->execute("SELECT naam FROM `meth_activiteit` WHERE `actie` LIKE 'verwijderd' ORDER BY timestamp DESC LIMIT 1", '', 'fetch');
-        
                                             echo ($lastremoved['naam'] == "" || !$lastremoved) ? "Onbekend" : $lastremoved['naam'];
-
                                             ?>
                                         </p>
                                         <a class="link-fx font-size-sm font-w600 text-muted text-uppercase mb-0" href="javascript:void(0)">
@@ -350,7 +354,7 @@ $sinaloa->includeHead();
                                                             <a class="font-w700">'.($persoon['verwijderd_planten'] / 5).'</a>
                                                         </td>
                                                         <td class="d-none d-sm-table-cell text-center">
-                                                            <a class="font-w700">'.($persoon["aantal_zakjes_inloods"] ?? "NULL").'</a>
+                                                            <a class="font-w700">'.($persoon["aantal_zakjes_inloods"] ?? NULL).'</a>
                                                         </td>
                                                     </tr>
                                                 ';
@@ -381,6 +385,15 @@ $sinaloa->includeHead();
         <script src="<?= str_replace("/home/tom/domains/tom974.dev/public_html", "", $_SERVER['DOCUMENT_ROOT']) ?>/sinaloa/assets/js/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
 
         <script>
+            setInterval(function(){
+                jQuery(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/../assets/scripts/refreshsession.php"
+                    });
+                });
+            }, 600000); 
+
             if ( window.history.replaceState ) {
                 window.history.replaceState( null, null, window.location.href );
             }
