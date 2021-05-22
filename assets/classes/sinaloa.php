@@ -48,7 +48,6 @@ class sinaloa {
         if(isset($_SESSION['id']) && $_SESSION['gebruikersnaam'] != "" && $_SESSION['naam'] != "") {
             $naam = $_SESSION['naam'];
             $gebruikersnaam = $_SESSION['gebruikersnaam'];
-            require __DIR__."/Database.php";
             $isAdmin = "true";
             $sql = "SELECT * FROM `sinaloa`.`gebruikers` WHERE gebruikersnaam LIKE ? ";
             $results = $this->execute($sql, [$gebruikersnaam], 'fetch');
