@@ -93,6 +93,7 @@ $sinaloa->includeHead();
                                                 $totaal = 0;
                                                 foreach($aantal as $persoon) {
                                                     $totaal = floatval($totaal + $persoon['aantal_planten']);
+                                                    $totaal_zakjes = floatval($totaal_zakjes + $persoon['zakjes_beschikbaar']);
                                                 }
 
                                             ?>
@@ -123,7 +124,7 @@ $sinaloa->includeHead();
                                 <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                                     <div class="ml-3">
                                         <p class="font-size-h2 font-w300 text-black mb-0">
-                                            <?= ($aantal_in_loods['aantal_planten'] / 5) ?>
+                                            <?= ($totaal_zakjes != "") ? $totaal_zakjes : "0" ?>
                                         </p>
                                         <a class="link-fx font-size-sm font-w600 text-muted text-uppercase mb-0" href="javascript:void(0)">
                                             Omgerekend Zakjes
