@@ -127,7 +127,7 @@ $sinaloa->includeHead();
                                             <?= ($totaal_zakjes != "") ? ceil($totaal_zakjes) : "0" ?>
                                         </p>
                                         <a class="link-fx font-size-sm font-w600 text-muted text-uppercase mb-0" href="javascript:void(0)">
-                                            Omgerekend Zakjes
+                                            Zakjes in de loods
                                         </a>
                                     </div>
                                     <div>
