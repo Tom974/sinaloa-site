@@ -10,7 +10,7 @@
             <!-- END User Avatar -->
             <!-- User Info -->
             <div class="ml-2">
-                <a class="text-white font-w600 welkom-naam" href="javascript:void(0)">Gebruiker</a>
+                <a class="text-white font-w600 welkom-naam" href="javascript:void(0)"><?= $login['naam'] ?></a>
             </div>
             <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
             <a class="ml-auto text-white" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_close">
