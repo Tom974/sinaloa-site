@@ -46,7 +46,7 @@ $sinaloa->includeHead();
                                         <p class="text-muted w-75">
                                             <?php
                                             $aantal_in_loods = $sinaloa->execute('SELECT aantal_planten FROM `meth_aantallen` ORDER BY `id` DESC LIMIT 1', '', "fetch");
-                                                            echo "Er passen nog ".(1500 - $aantal_in_loods[0])." ingredienten de loods";
+                                                            echo "Deze grafiek werkt nog niet helemaal lekker, voor nu dus uitgezet.";
                                             ?>
                                         </p>
                                     </div>
