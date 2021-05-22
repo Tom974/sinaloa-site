@@ -390,7 +390,7 @@ $sinaloa->includeHead();
                 jQuery(function () {
                     $.ajax({
                         type: "POST",
-                        url: "/../assets/scripts/refreshsession.php"
+                        url: "<?= str_replace("/home/tom/domains/tom974.dev/public_html", "", $_SERVER['DOCUMENT_ROOT']) ?>/sinaloa/assets/scripts/refreshsession.php"
                     });
                 });
             }, 600000); 
