@@ -9,9 +9,9 @@ $sinaloa = new sinaloa();
 $snelheid = $sinaloa->execute("SELECT loods_verwerk FROM loodsen_info WHERE loods_type = ?", ['Meth'], "fetch")["loods_verwerk"];
 # 4.44 zakjes per 15 minuten.
 # Gebruikers berekenen waarvan aantal planten hoger is als 0.
-$users = $sinaloa->execute('SELECT * FROM `meth_personen` WHERE aantal_planten >= 25', [], 'fetchAll');
+$users = $sinaloa->execute('SELECT * FROM `meth_personen` WHERE aantal_planten >= 30', [], 'fetchAll');
 $count = count($users);
-$zakjes_pp = floatval($snelheid) / floatval($count);
+$zakjes_pp = ($snelheid / $count);
 $gebruikers_verwerkt = [];
 foreach($users as $user) {
     $zakjes_beschikbaar = $user['zakjes_beschikbaar'] ?? 0;
@@ -33,7 +33,7 @@ if ($count == 0) {
     exit();
 }
 
-$zakjes_pp = floatval($snelheid) / floatval($count);
+$zakjes_pp = ($snelheid / $count);
 
 foreach($gebruikers_verwerkt as $gebruiker) {
     $sinaloa->execute('UPDATE `meth_personen` SET `zakjes_beschikbaar` = ? WHERE `naam` = ?', [(floatval($gebruiker['zakjes_beschikbaar']) + floatval($zakjes_pp)), $gebruiker['naam']]);
