@@ -15,7 +15,7 @@ $zakjes_pp = ($snelheid / $count);
 $gebruikers_verwerkt = [];
 foreach($users as $user) {
     $zakjes_beschikbaar = $user['zakjes_beschikbaar'] ?? 0;
-    if (($zakjes_beschikbaar + $zakjes_pp) >= ($user['aantal_planten'] / 5)) {
+    if (floatval($zakjes_beschikbaar + $zakjes_pp) >= floatval($user['aantal_planten'] / 5)) {
         $count = $count - 1;
         echo $user['naam']. " kan alles gwn pakken, wat een megool zeg. \n";
     } else {
