@@ -12,7 +12,7 @@ $snelheid = $sinaloa->execute("SELECT loods_verwerk FROM loodsen_info WHERE lood
 $users = $sinaloa->execute('SELECT * FROM `meth_personen` WHERE aantal_planten >= 30', [], 'fetchAll');
 $count = count($users);
 $zakjes_pp = ($snelheid / $count);
-$gebruikers_verwerkt = [];
+$gebruikers_verwerkt = []; 
 foreach($users as $user) {
     $zakjes_beschikbaar = $user['zakjes_beschikbaar'] ?? 0;
     if (floatval($zakjes_beschikbaar + $zakjes_pp) >= floatval($user['aantal_planten'] / 5)) {
