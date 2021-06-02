@@ -124,7 +124,7 @@ $sinaloa->includeHead();
                                 <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                                     <div class="ml-3">
                                         <p class="font-size-h2 font-w300 text-black mb-0">
-                                            <?= ($totaal_zakjes != "") ? ceil($totaal_zakjes) : "0" ?>
+                                            <?= ($totaal_zakjes != "") ? ceil($totaal_zakjes) : "0" ?> /  <?= ($totaal != "") ? ceil($totaal / 5) : "0" ?>
                                         </p>
                                         <a class="link-fx font-size-sm font-w600 text-muted text-uppercase mb-0" href="javascript:void(0)">
                                             Zakjes in de loods
