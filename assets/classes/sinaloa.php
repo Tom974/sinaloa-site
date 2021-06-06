@@ -17,8 +17,15 @@ class sinaloa {
             try {
                 $user = "tom";
                 $pass = "0659";
-                $db = "sinaloa";
                 $host = "localhost";
+                $extra = explode("/", $_SERVER["REQUEST_URI"])[2];
+
+                if (strtolower($extra) == "meth2") {
+                    $db = "anassentom";
+                } else if (strtolower($extra) == "meth"){
+                    $db = "sinaloa";
+                }
+                
                 $db = new PDO('mysql:host='.$host.';dbname='.$db.'', $user, $pass);
             } catch (PDOException $e) {
                 print "Error!: " . $e->getMessage() . "<br/>";
