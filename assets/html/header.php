@@ -41,15 +41,15 @@
                 </a>
             </li>
             <li class="nav-main-item">
-                <a class="nav-main-link <?php if ($dir[5] == "coke") echo "active"; ?> " href="<?= str_replace("/home/tom/domains/tom974.dev/public_html", "", $_SERVER['DOCUMENT_ROOT']) ?>/sinaloa/coke">
-                    <i class="nav-main-link-icon fa fas fa-cannabis"></i>
-                    <span class="nav-main-link-name">Coke</span>
-                </a>
-            </li>
-            <li class="nav-main-item">
                 <a class="nav-main-link <?php if ($dir[5] == "meth") echo "active"; ?> " href="<?= str_replace("/home/tom/domains/tom974.dev/public_html", "", $_SERVER['DOCUMENT_ROOT']) ?>/sinaloa/meth">
                     <i class="nav-main-link-icon fa fas fa-cannabis"></i>
                     <span class="nav-main-link-name">Meth</span>
+                </a>
+            </li>
+            <li class="nav-main-item">
+                <a class="nav-main-link <?php if ($dir[5] == "meth2") echo "active"; ?> " href="<?= str_replace("/home/tom/domains/tom974.dev/public_html", "", $_SERVER['DOCUMENT_ROOT']) ?>/sinaloa/meth2">
+                    <i class="nav-main-link-icon fa fas fa-cannabis"></i>
+                    <span class="nav-main-link-name">Meth2</span>
                 </a>
             </li>
             <li class="nav-main-heading">Account</li>
