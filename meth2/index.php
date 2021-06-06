@@ -3,6 +3,7 @@
 <?php
 
 echo '<xmp>Output $_SERVER File: '.end(explode('/',__FILE__)).' Line '.__LINE__.': '. print_r( $_SERVER, true ) .'</xmp>';
+var_dump(explode("/", $_SERVER["REQUEST_URI"]));
 exit;
 error_reporting(E_ALL & ~E_NOTICE);
 session_start();
