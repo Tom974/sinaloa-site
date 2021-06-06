@@ -24,6 +24,8 @@ class sinaloa {
                     $db = "anassentom";
                 } else if (strtolower($extra) == "meth"){
                     $db = "sinaloa";
+                } else {
+                    $db = "sinaloa";
                 }
                 
                 $db = new PDO('mysql:host='.$host.';dbname='.$db.'', $user, $pass);
