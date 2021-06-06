@@ -44,21 +44,21 @@ $sinaloa->includeHead();
                                     </a>
                                 </div>
                                 <div class="col-lg-6 col-xl-3 invisible" data-toggle="appear">
-                                    <a class="block block-bordered block-link-pop text-center mb-0" type="submit" href="https://tom974.dev/sinaloa/coke">
+                                    <a class="block block-bordered block-link-pop text-center mb-0" type="submit" href="https://tom974.dev/sinaloa/meth">
                                         <div class="block-content block-content-full text-center">
                                             <div class="py-2">
                                                 <i class="fa fa-2x fas fa-address-card text-primary d-none d-sm-inline-block mb-3"></i>
-                                                <div><strong>Naar Coke</strong></div>
+                                                <div><strong>Naar Meth</strong></div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6 col-xl-3 invisible" data-toggle="appear">
-                                    <a class="block block-bordered block-link-pop text-center mb-0" type="submit" href="https://tom974.dev/sinaloa/meth">
+                                    <a class="block block-bordered block-link-pop text-center mb-0" type="submit" href="https://tom974.dev/sinaloa/meth2">
                                         <div class="block-content block-content-full text-center">
                                             <div class="py-2">
                                                 <i class="fa fa-2x far fa-gem text-primary d-none d-sm-inline-block mb-3"></i>
-                                                <div><strong>Naar Meth</strong></div>
+                                                <div><strong>Naar Meth2</strong></div>
                                             </div>
                                         </div>
                                     </a>
